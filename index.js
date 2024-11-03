@@ -1,8 +1,8 @@
+logger.info(`---------=.=---------`)
+logger.info(`群管插件载入中`)
 import fs from 'node:fs'
 import { pluginRoot } from './lib/path.js'
 import cfginit from "./lib/cfginit.js"
-logger.info(`---------=.=---------`)
-logger.info(`群管插件载入中`)
 
 // 初始化配置文件
 cfginit.initConfig()
