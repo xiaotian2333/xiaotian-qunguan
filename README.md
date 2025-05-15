@@ -3,6 +3,8 @@
 一个群管插件  
 目前处于早期开发阶段，功能非常单一
 
+已放弃对 `miao-yunzai` 的主动支持，现已面向 `TRSS-yunzai` 开发
+
 > GitCode地址仅为镜像使用，如有提issues或pr需求请[前往GitHub](https://github.com/xiaotian2333/xiaotian-qunguan)
 
 ## 已实现功能

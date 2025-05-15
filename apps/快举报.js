@@ -108,9 +108,13 @@ export class report extends plugin {
   // 用户选择举报类型
   async Select(e) {
     e = this.e
-
     let num = parseInt(e.msg, 10)
-    if (isNaN(num) || num > 8 || num < 0) {
+    if (!/^\d+$/.test(num)) {
+      e.reply('请正确输入举报理由编号', true)
+      return true
+    }
+    num = parseInt(num)
+    if (isNaN(num) || num > Object.keys(ly).length || num < 0) {
       e.reply('请正确输入举报理由编号', true)
       return true
     }
@@ -125,7 +129,7 @@ export class report extends plugin {
     // 初始化用户id空间
     list[e.user_id] = {}
     // 记录举报原因
-    list[e.user_id]['Select'] = e.msg
+    list[e.user_id]['Select'] = num
     this.finish('Select') // 停止选择理由流程监听
     e.reply('请发送被举报人QQ，直接发送QQ号，可发送多个但请用空格断开', true)
     this.setContext('violator') // 开始举报者监听
